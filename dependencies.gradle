@@ -1,0 +1,45 @@
+/*
+ * Copyright (C) 2018 Emre Eran
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply from: 'versions.gradle'
+def dependencies = [:]
+
+// Plugins
+dependencies.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
+dependencies.gradle_bintray_plugin = "com.jfrog.bintray.gradle:gradle-bintray-plugin:$versions.gradle_bintray_plugin"
+dependencies.android_maven_gradle_plugin = "com.github.dcendents:android-maven-gradle-plugin:$versions.android_maven_gradle_plugin"
+
+// Support
+dependencies.app_compat = "androidx.appcompat:appcompat:$versions.app_compat"
+dependencies.material = "com.google.android.material:material:$versions.material"
+dependencies.constraint_layout = "androidx.constraintlayout:constraintlayout:$versions.constraint_layout"
+
+// Kotlin
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+dependencies.kotlin = kotlin
+dependencies.core_ktx = "androidx.core:core-ktx:$versions.core_ktx"
+
+// JUnit
+dependencies.junit = "junit:junit:$versions.junit"
+
+def test = [:]
+test.runner = "com.android.support.test:runner:$versions.test.runner"
+test.espresso_core = "com.android.support.test.espresso:espresso-core:$versions.test.espresso_core"
+dependencies.test = test
+
+ext.deps = dependencies

@@ -18,12 +18,12 @@ package com.emreeran.viewpagerindicatorkt
 
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.support.v4.view.ViewPager
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.viewpager.widget.ViewPager
 import java.util.*
 
 /**
